@@ -2,12 +2,17 @@
 .app-wrapper {
     display: flex;
     flex-direction: column;
-    background-color: aquamarine;
+    // background-color: aquamarine;
     height: 100vh;
     margin: 0 !important;
     padding: 0 !important;
     align-items: center;
     justify-content: space-between;
+    background-image: url("https://picsum.photos/seed/picsum/1920/1080");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 .top-section, .content-section, .bottom-nav-section {
@@ -15,7 +20,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: aqua;
+    // background-color: aqua;
 }
 
 .top-section {
@@ -38,4 +43,6 @@
 }
 
 
-// .bottom-nav-section { }
+.bottom-nav-section {
+    // background-color: green($color: #000000);
+}
