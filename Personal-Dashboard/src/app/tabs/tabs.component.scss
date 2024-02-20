@@ -34,8 +34,9 @@
     left: 0;
     z-index: -1;
 
-    border-radius: 10px;
+    border-radius: 5%;
     transition: all 0.4s;
+    // transition-delay: 1s;
     opacity: 0.4;
 }
 
@@ -44,22 +45,30 @@
     opacity: 1;
 }
 
+// Bookmarks tabtile
 .tabs .tab:nth-child(1) .tab-tile::before {
     background: linear-gradient(45deg, rgb(163, 131, 83), rgb(218, 238, 130));
 }
 
+// Todos tabtile
 .tabs .tab:nth-child(2) .tab-tile::before {
     background: linear-gradient(45deg, rgb(128, 49, 0), rgb(238, 200, 130));
 }
 
+// Notes tabtile
 .tabs .tab:nth-child(3) .tab-tile::before {
     background: linear-gradient(45deg, rgb(238, 168, 130), red);
+}
+
+.tab.active {
+    outline: none;
 }
 
 .tab.active > .tab-tile{
     transform: translateY(-32px);
     transition-duration: .4s;
     transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 3);
+    border-radius: 50%;
 }
 
 .tab.active > .tab-tile::before {
@@ -69,21 +78,31 @@
     box-shadow: 0px 9px 12px rgba(0, 0, 0, 0.369);
 }
 
-// .tab.active {
-//     position: relative;
-//     bottom: 10px;
-// }
-
 mat-icon {
     color: rgb(6, 5, 5);
 }
 
-
 // Underline effect
+.tab::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    right: 0;
+
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.766);
+    border-radius: 10%;
+    width: 50%;
+    margin: auto;
+    transform: scaleX(0);
+    transition: all .4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
 .tab.active::after {
     content: '';
     position: absolute;
-    bottom: 10px;
+    bottom: -3px;
     left: 0;
     right: 0;
 
@@ -91,6 +110,7 @@ mat-icon {
     background-color: rgba(255, 255, 255, 0.766);
     width: 50%;
     margin: auto;
-
+    transform: scaleX(1);
+    transition-delay: 0.3s;
 }
 
